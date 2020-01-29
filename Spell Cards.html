@@ -170,7 +170,7 @@
 			left: 100px;
 			display: none;
 		}
-		.importSpellList {
+		.selectPane {
 			position: absolute;
 			top: 100px;
 			left: 100px;
@@ -2428,6 +2428,7 @@ slot level above 1st.</p></div>
 			<td>Delete</td>
 			<td>Export</td>
 			<td>Import</td>
+			<td>SELECT SPELLS</td>
 		</tr>
 		<tr>
 			<td><input type="text" id="input_spellName" placeholder="Spell Name" style="width: 250px;"></td>
@@ -2438,6 +2439,7 @@ slot level above 1st.</p></div>
 			<td class="editButton" onclick="removeSpell()">✖</td>
 			<td class="editButton" onclick="exportSpells()">-&gt;</td>
 			<td class="editButton" onclick="importSpells()">&lt;-</td>
+			<td class="editButton" onclick="openSelectPane()">o</td>
 		</tr>
 		</tbody></table>
 		<table>
@@ -2495,7 +2497,7 @@ slot level above 1st.</p></div>
 <!-- =============================  -->
 
 <!--===== SPELL SELECTION LIST =====-->
-	<div id="importSpellList">
+	<div id="selectPane" class="selectPane">
 		<table></table>
 	</div>
 <!-- ============================== -->
@@ -2507,7 +2509,7 @@ slot level above 1st.</p></div>
 			font-size: 12px;
 		}
 
-		.importSpellList {
+		.selectPane {
 			background-color: white;
 			border          : 2px	solid black;
 			top             : 548.75px;
@@ -2518,9 +2520,10 @@ slot level above 1st.</p></div>
 	</style>
 
 	<script>
-	var curSpell = null;
-	var maxSpell = 52;
-	var spellCatalog = [];
+	var curSpell       = null;
+	var maxSpell       = 52;
+	var spellCatalog   = [];
+	var spellSelection = []
 
 	var spells = document.getElementsByClassName("spell");
 	for (var i = 0; i < spells.length; i++)
@@ -2528,8 +2531,53 @@ slot level above 1st.</p></div>
 		spells[i].onclick = function(){openEditPane(this, event);}
 	}
 
-	function populateSpellSelectionList() {
+	function openSelectPane() {
+		var selectPane = document.getElementById("selectPane");
+		selectPane.style.top = 0;
+		selectPane.style.left = 0;
+		if(selectPane.style.display == "block") {
+			selectPane.style.display = "none";
 
+		// Insert all selected spells into the document
+			spellSelection.forEach((spell) => {
+				insertSpell(spell.name);
+			});
+
+			spellSelection = [];
+
+		}
+		else {
+			selectPane.style.display = "block";
+
+		}
+	}
+
+	function populateSpellSelectionList() {
+		var selectTable = document.getElementById("selectPane").children[0];
+		spellCatalog.forEach((spell)=>{
+			let row = selectTable.insertRow();
+			let cell1 = row.insertCell();
+			let cell2 = row.insertCell();
+
+			var checkbox = document.createElement("input");
+			checkbox.type  = "checkbox";	// make the element a checkbox
+			checkbox.name  = spell.name 	// give it a name we can check on the server side
+			checkbox.value = spell.name;	// make its value "pair"
+
+			checkbox.onclick = function() {
+				if(checkbox.checked) {
+					//concentrationButton.className = "filledButton checkButton";
+					spellSelection.push(spellCatalog.find((element) => element.name == spell.name));
+				}
+				else {
+					//concentrationButton.className = "emptyButton checkButton";
+					spellSelection = spellSelection.filter((element) => element.name != spell.name);
+				}
+			};
+
+			cell1.appendChild(checkbox);
+			cell2.innerHTML = spell.name;
+		});
 	}
 
 	function shiftLeft() {
@@ -2590,11 +2638,16 @@ slot level above 1st.</p></div>
 	}
 
 	function exportSpells() {
-		spellList = [];
+		spellList = spellCatalog;		// Add the existing spells that were imported earlier
 
 		for(i = 1; i < 52; i++) {
 			var spellData = getSpellObj(i);
-			spellList.push(spellData);
+
+			objIndex = spellList.findIndex((obj => obj.name == spellData.name));
+			if (objIndex != -1)
+				spellList[objIndex] = spellData;
+			else
+				spellList.push(spellData);
 		}
 
 		var dataJSON = JSON.stringify(spellList);
@@ -2624,6 +2677,8 @@ slot level above 1st.</p></div>
 		/* Make this loaded by default later */
 			spellCatalog = loadedData;
 		/*                                   */
+
+			populateSpellSelectionList();
 
 			for(var i = 0; i < loadedData.length; i++)
 			{
@@ -2725,7 +2780,7 @@ slot level above 1st.</p></div>
 
 	function getFirstEmpty() {
 		var num = 1;
-		while (true) {
+		while (num <= maxSpell) {
 			if (spellIsEmpty(num) ) {
 				break;
 			}
@@ -2737,6 +2792,11 @@ slot level above 1st.</p></div>
 	function insertSpell(spellName) {
 		var spellData = spellCatalog.find((element) => element.name == spellName);
 		var slot  = getFirstEmpty();
+
+		if (slot > maxSpell) {
+
+		}
+
 
 		let currentSpell = document.getElementById("spell" + slot);
 
@@ -2770,6 +2830,8 @@ slot level above 1st.</p></div>
 		//var pasteText = //from clipboard
 		//curSpell.innerHTML = pasteText;
 	}
+
+
 
 	function openEditPane(spell, event) {
 		//console.log(spell);
