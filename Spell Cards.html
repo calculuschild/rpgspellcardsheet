@@ -1,5 +1,5 @@
 
-<!-- saved from url=(0084)file:///C:/Users/thato/Desktop/Spell%20Card%20Pages/Spell%20Cards%20(Level%203).html -->
+<!-- saved from url=(0069)file:///C:/Users/thato/Documents/rpgspellcardsheet/Spell%20Cards.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body style="zoom: 100%">
 	<style>
 		@page {
@@ -61,8 +61,8 @@
 			font-size: 16px;
 			color: #000000;
 			opacity: 1.00;
-			height: 28px;
-			line-height: 28px;
+			height: 22px;
+			line-height: 22px;
 			text-align: center;
 			vertical-align: top;
 			margin: 0px;
@@ -77,19 +77,21 @@
 			font-size: 13px;
 		}
 		.durationBox {
-			width: 66px;
+			width: 64px;
 		}
 		.castingTimeBox {
-			width: 84px;
+			width: 66px;
 		}
 		.rangeBox {
-			width: 76px;
+			width: 68px;
 		}
 		.componentsBox {
 			width: 84px;
 		}
 		.spellNameBox {
-			width: 328px;
+			line-height: 28px;
+			height: 28px;
+			width: 332px;
 			background: #CCCCCC;
 		}
 		.levelBox {
@@ -115,6 +117,39 @@
 		}
 		.consumedComponents:empty {
 			display: none;
+		}
+		.componentIcon {
+			background-size: 30px 30px;
+			background-repeat: no-repeat;
+			display:inline-block;
+			width:30px;
+			height:30px;
+			vertical-align: middle;
+			color: transparent;
+			padding-left: 3px;
+			margin-top: 4px;
+		}
+		.iconInactive {
+			filter: opacity(.3);
+		}
+		.ritualComponent {
+			background-image: url("ritual.svg");
+			background-size: 22px 30px;
+			width:22px;
+		}
+		.concentrationComponent {
+			background-image: url("brain.svg");
+			background-width: 27px 30px;
+			width:27px;
+		}
+		.verbalComponent {
+			background-image: url("verbal.svg");
+		}
+		.somaticComponent {
+			background-image: url("hand.svg");
+		}
+		.materialComponent {
+			background-image: url("material.svg");
 		}
 		.filledButton{
 			background-image: url("Radio Button Checked.png");
@@ -193,8 +228,9 @@
 		.instructionLabel {
 			font-family: "Open Sans";
 			font-style: normal;
-			font-weight: normal;
+			font-weight: bold;
 			font-size: 12px;
+			text-align: center;
 			line-height: 100%;
 			color: #000000;
 			height: 18px;
@@ -203,7 +239,7 @@
 			font-family: "Open Sans";
 			font-style: normal;
 			font-weight: normal;
-			font-size: 10px;
+			font-size: 12px;
 			line-height: 12px;
 			vertical-align: top;
 			color: #000000;
@@ -281,18 +317,55 @@
 			<div class="instructionLabel">CASTING A SPELL</div>
 			<div class="instructionText">If your spell says to do a melee or ranged spell attack, follow the same steps as for a normal attack.  Otherwise, your spell automatically hits.</div>
 
-			<div class="instructionLabel">CONCENTRATION</div>
-			<div class="instructionText">Some spells require concentration to keep them active; losing concentration ends the spell. Such spells are marked with the (C) bubble. You can end concentration at any time (no action required). If you cast another spell that requires concentration, the first spell ends. You also lose concentration if you are killed or incapacitated. If you take damage, you must make a Constitution saving throw to maintain concentration. The DC equals 10 or half the damage, whichever is higher.</div>
+			<br>
+			<hr>
 
-			<div class="instructionLabel">RITUAL CASTING</div>
-			<div class="instructionText">Some spells can be cast as a ritual if desired. Doing so adds 10 minutes to the casting time, but does not expend a spell slot. These are marked with the (R) bubble.</div>
+			<table>
+				<tbody><tr>
+					<td><div class="instructionLabel">RITUAL CASTING</div></td>
+					<td><div class="instructionLabel">CONCENTRATION</div></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="componentIcon ritualComponent" style="float:left; padding:4;"></div>
+						<div class="instructionText">You can spend 10 minutes performing a ritual to cast this spell without expending a spell slot.</div>
+					</td>
+					<td>
+						<div class="componentIcon concentrationComponent" style="float:left; padding:4;"></div>
+						<div class="instructionText">You can only maintain one spell that requires concentration at time, and you may lose concentration if you are damaged.</div>
+					</td>
+				</tr>
+			</tbody></table>
 
-			<div class="instructionLabel">COMPONENTS</div>
-			<div class="instructionText">A spell’s components are the physical requirements you must meet in order to cast it. Verbal (V) requires you to be able to speak, Somatic (S) requires a free hand to gesture, and Material (M) requires a component pouch or spellcasting focus, or sometimes specific items which are consumed.</div>
+			<br>
+			<hr>
+
+			<table>
+				<tbody><tr>
+					<td><div class="instructionLabel">VERBAL</div></td>
+					<td><div class="instructionLabel">SOMATIC</div></td>
+					<td><div class="instructionLabel">MATERIAL</div></td>
+				</tr>
+				<tr>
+					<td>
+						<div class="componentIcon verbalComponent" style="float:left; padding:4;"></div>
+						<div class="instructionText">You must be able to speak.</div>
+					</td>
+					<td>
+						<div class="componentIcon somaticComponent" style="float:left; padding:4;"></div>
+						<div class="instructionText">You must have a free hand.</div>
+					</td>
+					<td>
+						<div class="componentIcon materialComponent" style="float:left; padding:4;"></div>
+						<div class="instructionText">You have a material focus (wand, amulet, etc.).</div>
+					</td>
+				</tr>
+			</tbody></table>
+
+			<br>
+			<hr>
 
 			<div class="instructionLabel">SPELL SLOTS</div>
-			<div class="instructionText">Spells can be cast a limited number of times, represented as "slots." In order to cast a spell, you must have an open slot of the appropriate level or higher, which is then filled. Low-level spells cast using higher slots often makes the spell more powerful.</div>
-
 			<table style="width: 100%; margin: 2px auto;">
 				<tbody><tr>
 					<td><div class="spellSlots"><span class="slotNumber">0</span><span class="spellCircle" style="background-size: 0px 0px;">CANTRIPS</span></div></td>
@@ -320,158 +393,174 @@
 
 		<hr>
 
-		<div class="spell" id="spell5">
+		<div class="spell" id="spell5" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">BLINDING SMITE</div></td>
-				<td rowspan="2"><div class="textBox levelBox">3</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Bonus</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Min.</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="filledButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>On your next hit with a melee weapon, it flares with bright light, deals an extra 3d8 radiant damage. If the target fails a Constitution saving throw it is also blinded until the spell ends. Each turn, the creature can redo the saving throw to end its blindness.</p>
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell8">
+		<div class="spell" id="spell8" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">CHARM PERSON</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">30 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Hour</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>Charm a humanoid you can see. If the target succeeds on a Wisdom saving throw (with advantage if you or your allies are fighting it), the spell has no effect. Effect ends if the target is  harmed by you or your allies. The target knows you charmed it when the spell ends.</p>
-			<p><b>Higher Levels.</b> Charm an additional creature per spell slot level above 1st.</p></div>
+			<div class="spellText"><p></p>
+			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell11">
+		<div class="spell" id="spell11" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">COMMAND</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">60 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Round</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>Speak a one-word command to a creature you can see within range. On a failed Wisdom saving throw it must follow the command on its next turn. The spell has no effect if the target is undead, if it doesn’t understand your language, or if your command is directly harmful to it. If the target can’t follow your command, the spell ends.</p>
-			<p><b>Higher Levels.</b> Command one additional creature within 30 feet of the others per spell slot level above 1st.</p></div>
+			<div class="spellText"><p></p>
+			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell14">
+		<div class="spell" id="spell14" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">CREATE OR DESTROY WATER</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S, M</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">30 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">Instant</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>Create 10 gallons of clean water, or remove 10 gallons of water, from an open container. Alternatively, the water falls as rain in a 30-foot cube, or fog is removed from a 30-foot cube.</p>
-			<p><b>Higher Levels.</b> Affect 10 additional gallons, or increase the cube size by 5 feet per spell slot level above 1st.</p></div>
+			<div class="spellText"><p></p>
+			<p></p></div>
 		</div>
 
 	</div>
@@ -480,490 +569,518 @@
 
 
 	<td><div class="spellColumn">
-		<div class="spell" id="spell1">
+		<div class="spell" id="spell1" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">ANIMATE DEAD</div></td>
-				<td rowspan="2"><div class="textBox levelBox">3</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S, M</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">10 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Minute</div></td>
-				<td rowspan="2"><div class="textBox durationBox">Instant</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>Create a skeleton or zombie from a pile of bones or corpse of a Medium or Small humanoid. As a bonus action, you may mentally command all creatures you made with this spell within 60 feet. It will follow any command until complete, but otherwise will only defend itself.
-
-Every 24 hours, you must recast this spell on your creatures or your control is lost and they will stop their orders.</p>
-			<p><b>Higher Levels.</b> Animate two additional creatures per spell slot level above 3rd.</p></div>
-		</div>
-
-		<hr>
-
-		<div class="spell" id="spell3">
-			<table style="margin-bottom: -4px;">
-			<tbody><tr>
-				<td><div class="labelText">SPELL NAME</div></td>
-				<td><div class="labelText">LEVEL</div></td>
-			</tr>
-			<tr>
-				<td><div class="textBox spellNameBox">BEACON OF HOPE</div></td>
-				<td rowspan="2"><div class="textBox levelBox">3</div></td>
-			</tr>
-			</tbody></table>
-
-			<table>
-			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
-				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
-				<td><div class="labelText">DURATION</div></td>
-			</tr>
-			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">30 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Min</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="filledButton checkButton"></span></td>
-			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
-
-			<div class="consumedComponentsBox" style="display: none;"></div>
-
-			<div class="spellText"><p>Grant hope and vitality to any creatures you choose. Each target has advantage on Wisdom saving throws and Death saving throws, and regains the maximum hit points from any form of healing.
-
-</p>
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell6">
+		<div class="spell" id="spell3" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">BLINK</div></td>
-				<td rowspan="2"><div class="textBox levelBox">3</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Min</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>roll a d20 at the end of each of your turns. On an 11 or higher, you vanish into the Ethereal Plane. While there, creatures can't perceive or interact with you, nor you interact with them, but you can see and hear the plane you came from in shades of gray up to 60 feet away. At the start of your next turn, or when the spell ends, you return to an unoccupied space of your choice you can see within 10 feet, or the nearest unoccupied space. You can dismiss this spell as an action.</p>
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell9">
+		<div class="spell" id="spell6" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">CHROMATIC ORB</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S, M</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">90 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">Instant</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
-
-			<div class="consumedComponentsBox" style="display: block;">A diamond worth at least 50gp</div>
-
-			<div class="spellText"><p>Hurl a 4-inch-diameter sphere of energy at a creature that you can see. Choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose.</p>
-			<p><b>Higher Levels.</b> Increase damage by 1d8 for each spell slot level above 1st.</p></div>
-		</div>
-
-		<hr>
-
-		<div class="spell" id="spell12">
-			<table style="margin-bottom: -4px;">
-			<tbody><tr>
-				<td><div class="labelText">SPELL NAME</div></td>
-				<td><div class="labelText">LEVEL</div></td>
-			</tr>
-			<tr>
-				<td><div class="textBox spellNameBox" id="spellName1">COMPELLED DUEL</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
-			</tr>
-			</tbody></table>
-
-			<table>
-			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
-				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
-				<td><div class="labelText">DURATION</div></td>
-			</tr>
-			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">30 Feet</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Bonus</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Min</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="filledButton checkButton"></span></td>
-			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>One creature you can see must make a Wisdom saving throw. On a failure, the creature is compelled to duel you. It has disadvantage on attack rolls against creatures other than you, and must succeed on a Wisdom saving throw to move into a space that is more than 30 feet away from you.
-
-The spell ends if you attack or cast a spell any other hostile creature, if a creature friendly to you damages the target, or if you end your turn more than 30 feet away from the target.</p>
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell15">
+		<div class="spell" id="spell9" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">CURE WOUNDS</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Touch</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">Instant</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>A creature you touch regains hitpoints equal to 1d8 + your Spellcasting Ability Modifier. Has no effect on undead or constructs.</p>
-			<p><b>Higher Levels.</b> Heal an additional 1d8 per spell slot level above 1st.</p></div>
+			<div class="spellText"><p></p>
+			<p></p></div>
+		</div>
+
+		<hr>
+
+		<div class="spell" id="spell12" style="opacity: 0;">
+			<table style="margin-bottom: -4px;">
+			<tbody>
+			<tr>
+				<td><div class="labelText">SPELL NAME</div></td>
+				<td><div class="labelText">LEVEL</div></td>
+			</tr>
+			<tr>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<table>
+			<tbody><tr>
+				<td><div class="labelText">RANGE</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
+				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<div class="consumedComponentsBox" style="display: none;"></div>
+
+			<div class="spellText"><p></p>
+			<p></p></div>
+		</div>
+
+		<hr>
+
+		<div class="spell" id="spell15" style="opacity: 0;">
+			<table style="margin-bottom: -4px;">
+			<tbody>
+			<tr>
+				<td><div class="labelText">SPELL NAME</div></td>
+				<td><div class="labelText">LEVEL</div></td>
+			</tr>
+			<tr>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<table>
+			<tbody><tr>
+				<td><div class="labelText">RANGE</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
+				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<div class="consumedComponentsBox" style="display: none;"></div>
+
+			<div class="spellText"><p></p>
+			<p></p></div>
 		</div>
 
 	</div></td>
 
 	<td><div class="spellColumn">
-		<div class="spell" id="spell2">
+		<div class="spell" id="spell2" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">AURA OF VITALITY</div></td>
-				<td rowspan="2"><div class="textBox levelBox">3</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V,</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Min</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="filledButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>Radiate healing energy in a 30-foot radius around you. As a bonus action, you can heal one creature in the aura 2d6 hit points.</p>
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell4">
+		<div class="spell" id="spell4" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">BESTOW CURSE</div></td>
-				<td rowspan="2"><div class="textBox levelBox">3</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Touch</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Min</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="filledButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>A creature you touch becomes cursed if it fails a Wisdom saving throw. Choose a curse from below:
-</p><ul>
-<li>Disadvantage on checks with an ability of your choice.</li>
-<li>Disadvantage on attack rolls against you.</li>
-<li>Each turn, do no action if it fails a Wisdom saving throw.</li>
-<li>Your attacks and spells deal extra 1d8 necrotic damage.</li>
-<li>A curse of similar power of your choice at DM's discretion.</li>
-</ul>
-REMOVE CURSE spell ends the curse.<p></p>
-			<p><b>Higher Levels.</b> Duration is 10 mins at 4th level, 8 hours at 5th, 24 hours at 7th, forever at 9th.</p></div>
-		</div>
-
-		<hr>
-
-		<div class="spell" id="spell7">
-			<table style="margin-bottom: -4px;">
-			<tbody><tr>
-				<td><div class="labelText">SPELL NAME</div></td>
-				<td><div class="labelText">LEVEL</div></td>
-			</tr>
-			<tr>
-				<td><div class="textBox spellNameBox">BURNING HANDS</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
-			</tr>
-			</tbody></table>
-
-			<table>
-			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
-				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
-				<td><div class="labelText">DURATION</div></td>
-			</tr>
-			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">Instant</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
-
-			<div class="consumedComponentsBox" style="display: none;"></div>
-
-			<div class="spellText"><p>As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A target takes 3d6 fire damage on a failed save, or half as much damage on a successful one. The fire ignites any flammable objects in the area that aren’t being worn or carried.
-
-</p><ul></ul><p></p>
-			<p><b>Higher Levels.</b> Increase damage by 1d6 for each spell slot level above 1st.</p></div>
-		</div>
-
-		<hr>
-
-		<div class="spell" id="spell10">
-			<table style="margin-bottom: -4px;">
-			<tbody><tr>
-				<td><div class="labelText">SPELL NAME</div></td>
-				<td><div class="labelText">LEVEL</div></td>
-			</tr>
-			<tr>
-				<td><div class="textBox spellNameBox">COLOR SPRAY</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
-			</tr>
-			</tbody></table>
-
-			<table>
-			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
-				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
-				<td><div class="labelText">DURATION</div></td>
-			</tr>
-			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S, M</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Round</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
-
-			<div class="consumedComponentsBox" style="display: none;"></div>
-
-			<div class="spellText"><p>A dazzling array of flashing, colored light springs from your hand, targeting creatures in a 15-foot cone. Roll 6d10 and count the total. Starting with the target with the lowest current hit points, subtract each target’s hit points from the total. Any creature whose hit points can be fully subtracted from the rolled total is blinded for one round.</p>
-			<p><b>Higher Levels.</b> Roll an additional 2d10 for each spell slot level above 1st.</p></div>
-		</div>
-
-		<hr>
-
-		<div class="spell" id="spell13">
-			<table style="margin-bottom: -4px;">
-			<tbody><tr>
-				<td><div class="labelText">SPELL NAME</div></td>
-				<td><div class="labelText">LEVEL</div></td>
-			</tr>
-			<tr>
-				<td><div class="textBox spellNameBox">COMPREHEND LANGUAGES</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
-			</tr>
-			</tbody></table>
-
-			<table>
-			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
-				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
-				<td><div class="labelText">DURATION</div></td>
-			</tr>
-			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S, M</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">1 Hour</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="filledButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
-
-			<div class="consumedComponentsBox" style="display: none;"></div>
-
-			<div class="spellText"><p>For the duration, you understand the literal meaning of any spoken language that you hear. You also understand any written language that you see, but you must be touching the surface on which the words are written. It takes about 1 minute to read one page of text.
-
-This spell doesn’t decode secret messages in a text, nor glyphs, such as an arcane sigil, that aren’t part of a written language.</p>
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 
 		<hr>
 
-		<div class="spell" id="spell16">
+		<div class="spell" id="spell7" style="opacity: 0;">
 			<table style="margin-bottom: -4px;">
-			<tbody><tr>
+			<tbody>
+			<tr>
 				<td><div class="labelText">SPELL NAME</div></td>
 				<td><div class="labelText">LEVEL</div></td>
 			</tr>
 			<tr>
-				<td><div class="textBox spellNameBox">DETECT EVIL AND GOOD</div></td>
-				<td rowspan="2"><div class="textBox levelBox">1</div></td>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
 			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<table>
 			<tbody><tr>
-				<td><div class="labelText">COMPONENTS</div></td>
 				<td><div class="labelText">RANGE</div></td>
-				<td><div class="labelText">CASTING TIME</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
 				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
 			</tr>
 			<tr>
-				<td rowspan="2"><div class="textBox componentsBox">V, S</div></td>
-				<td rowspan="2"><div class="textBox rangeBox">Self</div></td>
-				<td rowspan="2"><div class="textBox castingTimeBox">1 Action</div></td>
-				<td rowspan="2"><div class="textBox durationBox">10 Min</div></td>
-				<td><span class="buttonLabelText">(C) </span><span class="filledButton checkButton"></span></td>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
 			</tr>
-			<tr>
-				<td><span class="buttonLabelText">(R) </span><span class="emptyButton checkButton"></span></td>
-			</tr>
-			</tbody></table>
+			</tbody>
+			</table>
 
 			<div class="consumedComponentsBox" style="display: none;"></div>
 
-			<div class="spellText"><p>For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place or object within 30 feet of you that has been magically consecrated or desecrated.
+			<div class="spellText"><p></p>
+			<p></p></div>
+		</div>
 
-The spell penetrates barriers, except 3 feet of wood or dirt, 1 foot of stone, 1 inch of any metal, or a thin sheet of lead.</p>
+		<hr>
+
+		<div class="spell" id="spell10" style="opacity: 0;">
+			<table style="margin-bottom: -4px;">
+			<tbody>
+			<tr>
+				<td><div class="labelText">SPELL NAME</div></td>
+				<td><div class="labelText">LEVEL</div></td>
+			</tr>
+			<tr>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<table>
+			<tbody><tr>
+				<td><div class="labelText">RANGE</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
+				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<div class="consumedComponentsBox" style="display: none;"></div>
+
+			<div class="spellText"><p></p>
+			<p></p></div>
+		</div>
+
+		<hr>
+
+		<div class="spell" id="spell13" style="opacity: 0;">
+			<table style="margin-bottom: -4px;">
+			<tbody>
+			<tr>
+				<td><div class="labelText">SPELL NAME</div></td>
+				<td><div class="labelText">LEVEL</div></td>
+			</tr>
+			<tr>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<table>
+			<tbody><tr>
+				<td><div class="labelText">RANGE</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
+				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<div class="consumedComponentsBox" style="display: none;"></div>
+
+			<div class="spellText"><p></p>
+			<p></p></div>
+		</div>
+
+		<hr>
+
+		<div class="spell" id="spell16" style="opacity: 0;">
+			<table style="margin-bottom: -4px;">
+			<tbody>
+			<tr>
+				<td><div class="labelText">SPELL NAME</div></td>
+				<td><div class="labelText">LEVEL</div></td>
+			</tr>
+			<tr>
+				<td><div class="textBox spellNameBox"></div></td>
+				<td rowspan="2"><div class="textBox levelBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<table>
+			<tbody><tr>
+				<td><div class="labelText">RANGE</div></td>
+				<td><div class="labelText">CAST TIME</div></td>
+				<td><div class="labelText">DURATION</div></td>
+				<td rowspan="2">
+				    <div class="componentIcon ritualComponent iconInactive"></div><!--
+				 --><div class="componentIcon concentrationComponent iconInactive"></div><!--
+				 --><div class="componentIcon verbalComponent iconInactive"></div><!--
+				 --><div class="componentIcon somaticComponent iconInactive"></div><!--
+				 --><div class="componentIcon materialComponent iconInactive"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="textBox rangeBox"></div></td>
+				<td><div class="textBox castingTimeBox"></div></td>
+				<td><div class="textBox durationBox"></div></td>
+			</tr>
+			</tbody>
+			</table>
+
+			<div class="consumedComponentsBox" style="display: none;"></div>
+
+			<div class="spellText"><p></p>
 			<p></p></div>
 		</div>
 	</div></td>
@@ -2418,7 +2535,7 @@ slot level above 1st.</p></div>
 
 
 <!--===== EDIT PANE =====-->
-	<div class="editPane" id="editPane" style="background-color: white; border: 2px solid black; top: 548.75px; left: 835.975px; display: none; box-shadow: rgb(136, 136, 136) 10px 10px 5px; padding: 6px;">
+	<div class="editPane" id="editPane" style="background-color: white; border: 2px solid black; top: 1080.67px; left: 835.2px; display: none; box-shadow: rgb(136, 136, 136) 10px 10px 5px; padding: 6px;">
 		<table>
 		<tbody><tr>
 			<td>Spell Name</td>
@@ -2443,26 +2560,36 @@ slot level above 1st.</p></div>
 		</tr>
 		</tbody></table>
 		<table>
-		<tbody><tr>
-			<td>Components</td>
+		<tbody>
+		<tr>
 			<td>Range</td>
-			<td>Casting Time</td>
+			<td>Cast Time</td>
 			<td>Duration</td>
 			<td rowspan="2">
 				<table>
 					<tbody>
-						<tr><td>Concentration</td><td><input type="checkbox" id="input_concentration"></td>
-							<td rowspan="2"><input type="file" id="fileInput"></td>
-						</tr>
-						<tr></tr>
 						<tr><td>Ritual</td><td><input type="checkbox" id="input_ritual"></td>
+						</tr>
+						<tr><td>Concentration</td><td><input type="checkbox" id="input_concentration"></td>
 						</tr>
 					</tbody>
 				</table>
 			</td>
+			<td rowspan="2">
+				<table>
+					<tbody>
+						<tr><td>Verbal</td><td><input type="checkbox" id="input_verbal"></td>
+						</tr>
+						<tr><td>Somatic</td><td><input type="checkbox" id="input_somatic"></td>
+						</tr>
+						<tr><td>Material</td><td><input type="checkbox" id="input_material"></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+			<td rowspan="2"><input type="file" id="fileInput"></td>
 		</tr>
 		<tr>
-			<td><input type="text" id="input_components" placeholder="Components" style="width: 70px;"></td>
 			<td><input type="text" id="input_range" placeholder="Range" style="width: 60px;"></td>
 			<td><input type="text" id="input_castingTime" placeholder="Casting Time" style="width: 70px;"></td>
 			<td><input type="text" id="input_duration" placeholder="Duration" style="width: 60px;"></td>
@@ -2502,7 +2629,7 @@ slot level above 1st.</p></div>
 	</div>
 <!-- ============================== -->
 
-	<div class="spellSelection" id="spellSelection" style="border: 2px dashed yellow; display: none; pointer-events: none; top: 558.75px; left: 435.975px;"></div>
+	<div class="spellSelection" id="spellSelection" style="border: 2px dashed yellow; display: none; pointer-events: none; top: 1090.67px; left: 435.2px;"></div>
 
 	<style>
 		.editPane table tr {
@@ -2610,18 +2737,46 @@ slot level above 1st.</p></div>
 		openEditPane(curSpell);	//Reopen edit pane at new position
 	}
 
+	function getSpellObj(spellId) {
+		var currentSpell = document.getElementById("spell" + spellId);
+		console.log(currentSpell);
+		var spellData = {};
+
+		spellData.name 			         = currentSpell.getElementsByClassName("spellNameBox")[0].innerHTML;
+		spellData.level 		         = currentSpell.getElementsByClassName("levelBox")[0].innerHTML;
+		spellData.range 		         = currentSpell.getElementsByClassName("rangeBox")[0].innerHTML;
+		spellData.castingTime 	     = currentSpell.getElementsByClassName("castingTimeBox")[0].innerHTML;
+		spellData.duration 		       = currentSpell.getElementsByClassName("durationBox")[0].innerHTML;
+		spellData.consumedComponents = currentSpell.getElementsByClassName("consumedComponentsBox")[0].innerHTML;
+		spellData.mainText 		       = currentSpell.getElementsByClassName("spellText")[0].children[0].innerHTML;
+		spellData.extraText 	       = currentSpell.getElementsByClassName("spellText")[0].children[1].innerHTML;
+
+		spellData.ritual        = !currentSpell.getElementsByClassName("componentIcon")[0].classList.contains("iconInactive");
+		spellData.concentration = !currentSpell.getElementsByClassName("componentIcon")[1].classList.contains("iconInactive");
+		spellData.verbal        = !currentSpell.getElementsByClassName("componentIcon")[2].classList.contains("iconInactive");
+		spellData.somatic       = !currentSpell.getElementsByClassName("componentIcon")[3].classList.contains("iconInactive");
+		spellData.material      = !currentSpell.getElementsByClassName("componentIcon")[4].classList.contains("iconInactive");
+
+		return spellData;
+	}
+
 	function clearSpell() {
 		curSpell.getElementsByClassName("spellNameBox")[0].innerHTML = "";
 		curSpell.getElementsByClassName("levelBox")[0].innerHTML = "";
-		curSpell.getElementsByClassName("componentsBox")[0].innerHTML = "";
 		curSpell.getElementsByClassName("rangeBox")[0].innerHTML = "";
 		curSpell.getElementsByClassName("castingTimeBox")[0].innerHTML = "";
 		curSpell.getElementsByClassName("durationBox")[0].innerHTML = "";
 		curSpell.getElementsByClassName("consumedComponentsBox")[0].innerHTML = "";
 		curSpell.getElementsByClassName("spellText")[0].children[0].innerHTML = "";
 		curSpell.getElementsByClassName("spellText")[0].children[1].innerHTML = "";
-		curSpell.getElementsByClassName("checkButton")[0].className = "emptyButton checkButton";
-		curSpell.getElementsByClassName("checkButton")[1].className = "emptyButton checkButton";
+
+		curSpell.getElementsByClassName("componentIcon")[0].classList.add("iconInactive");
+		curSpell.getElementsByClassName("componentIcon")[1].classList.add("iconInactive");
+		curSpell.getElementsByClassName("componentIcon")[2].classList.add("iconInactive");
+		curSpell.getElementsByClassName("componentIcon")[3].classList.add("iconInactive");
+		curSpell.getElementsByClassName("componentIcon")[4].classList.add("iconInactive");
+
+		curSpell.style.opacity = 0;
 	}
 
 	function removeSpell() {
@@ -2742,37 +2897,11 @@ slot level above 1st.</p></div>
 		}
 	}
 
-	function getSpellObj(spellId) {
-		var currentSpell = document.getElementById("spell" + spellId);
-		var spellData = {};
-
-		spellData.name 			         = currentSpell.getElementsByClassName("spellNameBox")[0].innerHTML;
-		spellData.level 		         = currentSpell.getElementsByClassName("levelBox")[0].innerHTML;
-		spellData.components 	       = currentSpell.getElementsByClassName("componentsBox")[0].innerHTML;
-		spellData.range 		         = currentSpell.getElementsByClassName("rangeBox")[0].innerHTML;
-		spellData.castingTime 	     = currentSpell.getElementsByClassName("castingTimeBox")[0].innerHTML;
-		spellData.duration 		       = currentSpell.getElementsByClassName("durationBox")[0].innerHTML;
-		spellData.consumedComponents = currentSpell.getElementsByClassName("consumedComponentsBox")[0].innerHTML;
-		spellData.mainText 		       = currentSpell.getElementsByClassName("spellText")[0].children[0].innerHTML;
-		spellData.extraText 	       = currentSpell.getElementsByClassName("spellText")[0].children[1].innerHTML;
-
-		if(currentSpell.getElementsByClassName("checkButton")[0].className == "filledButton checkButton")
-			spellData.concentration = true;
-		else
-			spellData.concentration = false;
-		if(currentSpell.getElementsByClassName("checkButton")[1].className == "filledButton checkButton")
-			spellData.ritual = true;
-		else
-			spellData.ritual = false;
-
-		return spellData;
-	}
-
 	function spellIsEmpty(spellId) {
 		var s = getSpellObj(spellId);
 
-		if(!s.name && !s.level && !s.components && !s.range && !s.castingTime && !s.duration && !s.consumedComponents
-					 && !s.mainText && !s.extraText && ! s.concentration && !s.ritual) {
+		if(!s.name && !s.level && !s.range && !s.castingTime && !s.duration && !s.consumedComponents
+					 && !s.mainText && !s.extraText && ! s.ritual && !s.concentration && !s.verbal && !s.somatic && !s.material) {
 			return true;
 		}
 		return false;
@@ -2793,16 +2922,15 @@ slot level above 1st.</p></div>
 		var spellData = spellCatalog.find((element) => element.name == spellName);
 		var slot  = getFirstEmpty();
 
+		// TODO: GENERATE NEW PAGE IF OUT OF ROOM
 		if (slot > maxSpell) {
 
 		}
-
 
 		let currentSpell = document.getElementById("spell" + slot);
 
 		currentSpell.getElementsByClassName("spellNameBox")[0].innerHTML          = spellData.name;
 		currentSpell.getElementsByClassName("levelBox")[0].innerHTML              = spellData.level;
-		currentSpell.getElementsByClassName("componentsBox")[0].innerHTML         = spellData.components;
 		currentSpell.getElementsByClassName("rangeBox")[0].innerHTML              = spellData.range;
 		currentSpell.getElementsByClassName("castingTimeBox")[0].innerHTML        = spellData.castingTime;
 		currentSpell.getElementsByClassName("durationBox")[0].innerHTML           = spellData.duration;
@@ -2810,15 +2938,16 @@ slot level above 1st.</p></div>
 		currentSpell.getElementsByClassName("spellText")[0].children[0].innerHTML = spellData.mainText;
 		currentSpell.getElementsByClassName("spellText")[0].children[1].innerHTML = spellData.extraText;
 
-		if(spellData.concentration == true)
-			currentSpell.getElementsByClassName("checkButton")[0].className == "filledButton checkButton";
-		else
-			currentSpell.getElementsByClassName("checkButton")[0].className == "emptyButton checkButton";
-
 		if(spellData.ritual == true)
-			currentSpell.getElementsByClassName("checkButton")[1].className == "filledButton checkButton";
-		else
-			currentSpell.getElementsByClassName("checkButton")[1].className == "emptyButton checkButton";
+			currentSpell.getElementsByClassName("componentIcon")[0].classList.remove("iconInactive");
+		if(spellData.concentration == true)
+			currentSpell.getElementsByClassName("componentIcon")[1].classList.remove("iconInactive");
+		if(spellData.verbal == true || spellData.components.includes("V"))
+			currentSpell.getElementsByClassName("componentIcon")[2].classList.remove("iconInactive");
+		if(spellData.somatic == true || spellData.components.includes("S"))
+			currentSpell.getElementsByClassName("componentIcon")[3].classList.remove("iconInactive");
+		if(spellData.material == true || spellData.components.includes("M"))
+			currentSpell.getElementsByClassName("componentIcon")[4].classList.remove("iconInactive");
 	}
 
 	function copySpell() {
@@ -2834,7 +2963,8 @@ slot level above 1st.</p></div>
 
 
 	function openEditPane(spell, event) {
-		//console.log(spell);
+		let spellId = spell.id.substring(5);
+
 		var rect = spell.getBoundingClientRect();
 		var x = rect.left + window.pageXOffset;
 		var y = rect.top + window.pageYOffset ;
@@ -2845,18 +2975,17 @@ slot level above 1st.</p></div>
 		else{x = x+400;}
 		y = y-10;
 
-		//x = Math.floor((x-25) / 387)
-		//if(x == 2) {x = (x-1)*400 + 0;}
-		//else {x = (x+1)*400 + 30;}
-		//y = y-50;
-
 		var editPane = document.getElementById("editPane");
 		editPane.style.top = y;
 		editPane.style.left = x;
-		if(editPane.style.display == "block")
+		if(editPane.style.display == "block") {	// Open the Edit Pane
 			editPane.style.display = "none";
-		else
+			if (spellIsEmpty(spellId)) spell.style.opacity = 0;
+		}
+		else {																	// Close the Edit Pane
 			editPane.style.display = "block";
+			spell.style.opacity = 1;
+		}
 
 		//Draw dashed border around selected spell
 		var spellSelection = document.getElementById("spellSelection");
@@ -2869,9 +2998,9 @@ slot level above 1st.</p></div>
 
 		// Bind input boxes to current spell
 		curSpell = spell;
+
 		bindInputToBoxes(curSpell, "input_spellName", "spellNameBox");
 		bindInputToBoxes(curSpell, "input_level", "levelBox");
-		bindInputToBoxes(curSpell, "input_components", "componentsBox");
 		bindInputToBoxes(curSpell, "input_range", "rangeBox");
 		bindInputToBoxes(curSpell, "input_castingTime", "castingTimeBox");
 		bindInputToBoxes(curSpell, "input_duration", "durationBox");
@@ -2879,37 +3008,33 @@ slot level above 1st.</p></div>
 		bindInputToBoxes(curSpell, "input_spellText", "spellText");
 		bindInputToBoxes(curSpell, "input_atHigherLevels", "spellText");
 
-		var concentrationButton = curSpell.getElementsByClassName("checkButton")[0];
-		var inputConcentrationBox = document.getElementById("input_concentration");
-		if(concentrationButton.className == "filledButton checkButton")
-			inputConcentrationBox.checked = true;
-		else
-			inputConcentrationBox.checked = false;
-		inputConcentrationBox.onclick = function() {
-			if(inputConcentrationBox.checked)
-				concentrationButton.className = "filledButton checkButton";
-			else
-				concentrationButton.className = "emptyButton checkButton";
-		}
+		bindChecksToIcons(curSpell, 0, "input_ritual");
+		bindChecksToIcons(curSpell, 1, "input_concentration");
+		bindChecksToIcons(curSpell, 2, "input_verbal");
+		bindChecksToIcons(curSpell, 3, "input_somatic");
+		bindChecksToIcons(curSpell, 4, "input_material");
+	}
 
-		var ritualButton = curSpell.getElementsByClassName("checkButton")[1];
-		var inputRitualBox = document.getElementById("input_ritual");
-		if(ritualButton.className == "filledButton checkButton")
-			inputRitualBox.checked = true;
+	function bindChecksToIcons(curSpell, iconNumber, checkboxName) {
+		console.log(iconNumber);
+		var icon = curSpell.getElementsByClassName("componentIcon")[iconNumber];
+		var inputCheckbox = document.getElementById(checkboxName);
+		if(icon.classList.contains("iconInactive"))
+			inputCheckbox.checked = false;
 		else
-			inputRitualBox.checked = false;
-		inputRitualBox.onclick = function() {
-			if(inputRitualBox.checked)
-				ritualButton.className = "filledButton checkButton";
+			inputCheckbox.checked = true;
+		inputCheckbox.onclick = function() {
+			if(inputCheckbox.checked)
+				icon.classList.remove("iconInactive");
 			else
-				ritualButton.className = "emptyButton checkButton";
+				icon.classList.add("iconInactive");
 		}
-
 	}
 
 	function bindInputToBoxes(curSpell, inputBoxName, textBoxName) {
 		var textBox = curSpell.getElementsByClassName(textBoxName)[0];
 		var inputBox = document.getElementById(inputBoxName);
+		console.log(inputBoxName);
 		if(inputBoxName == "input_spellText")
 		{
 			//console.log(textBox.firstChild);
@@ -2943,4 +3068,5 @@ slot level above 1st.</p></div>
 		document.getElementById('spellName1').innerHTML = inputBox.value;
 	}
 	</script>
+
 </body></html>
